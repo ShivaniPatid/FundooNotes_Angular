@@ -1,0 +1,54 @@
+<div class="layout">
+    <div class="container">
+        <div class="reg-container">
+            <div class="form-head">
+                <div>
+                    <span style="font-size: 30px ; color: #4285F4">F</span>
+                    <span style="font-size: 30px ; color: #EA4335">u</span>
+                    <span style="font-size: 30px ; color: #FBBC05">n</span>
+                    <span style="font-size: 30px ; color: #4285F4">d</span>
+                    <span style="font-size: 30px ; color: #34A853">o</span>
+                    <span style="font-size: 30px ; color: #EA4335">o</span>
+                </div>
+            </div>
+            <div class='form-account'>
+                <h1>Your Fundoo Account</h1>
+            </div>
+            <div>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <mat-error>Enter Email</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="password">
+                            <mat-error>Enter Password</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group form-field">
+                        <section>
+                            <mat-checkbox>Show Password</mat-checkbox>
+                        </section>
+                    </div>
+                    <div class="form-group form-field">
+                        <a class="btn-instead">forget email?</a>
+                        <a class="btn-instead">forget password?</a>
+                    </div>
+                    <p><mat-hint>Not your computer? Use Guest mode to sign in privstely</mat-hint></p>
+                    <div class="form-group form-field">
+                        <a class="btn-instead">Learn more</a>
+                    </div>
+                    <div class="form-group buttons">
+                        <button class="btn-instead" routerLink="/register">Create account</button>
+                        <button mat-raised-button class="btn-signup" color="primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

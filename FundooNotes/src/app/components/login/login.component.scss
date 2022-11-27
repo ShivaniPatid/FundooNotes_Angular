@@ -1,0 +1,89 @@
+.layout
+{
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 32%;
+    padding-right: 32%;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 15px;
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 10px #00000029;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.reg-container
+{
+    display: flex;
+    min-width: 60%;
+    flex-direction: column;
+}
+.form-head
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding: 15px;
+}
+.form-account
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    padding: 15px;
+}
+.form-group
+{
+    display: flex;
+    justify-content:flex-start; 
+    margin-bottom: 10px;
+}
+.mat-form-filed
+{
+    width: min-content;
+}
+mat-hint
+{
+    font-size: small;
+    font-size: 12px;
+    color: #878484;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+.form-field
+{
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.btn-instead
+{
+    font-weight: 500;
+    color: #1a73e8;
+    padding: 10px;
+    border: none;
+}
+.btn-signup
+{
+    color: white;
+    font-weight: 500;
+    background-color: #1a73e8;
+    padding: 10px;
+    border: none;
+    width: 30%;
+}
+.buttons
+{
+    display: flex;
+    justify-content: space-between;
+}
+
