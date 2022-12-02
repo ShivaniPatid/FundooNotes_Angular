@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+.notes {
+    border: 1px;
+    border-color: #6d7075;
+    box-shadow: 1px 1px 2px 2px gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+.notes:hover {
+    box-shadow: 1px 1px 3px 3px gray;
+}
+.title {
+    font-size: medium;
+}
+.description {
+    font-size: small;
+}

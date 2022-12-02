@@ -1,1 +1,10 @@
-<!-- <p>display-notes works!</p> -->
+<div class="container">
+    <div class="notes" *ngFor="let notes of NotesList">
+        <div class="title">
+            <p>{{notes.title}}</p>
+        </div>
+        <div class="description">
+            <p>{{notes.note}}</p>
+        </div>
+    </div>
+</div>
