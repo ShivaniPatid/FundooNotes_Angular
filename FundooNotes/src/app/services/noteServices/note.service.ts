@@ -21,4 +21,14 @@ export class NoteService {
     }
     return this.httpService.postService("/Note/Add", payload, true, header)
   }
+
+  getAllNoteService(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.getService("/Note/AllNotes", true, header)
+  }
 }
