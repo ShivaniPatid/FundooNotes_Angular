@@ -1,0 +1,25 @@
+<div class="notes">
+    <div *ngIf="showTitle" class="title">
+        <input matInput [(ngModel)]="title" class="takenote"  type="text" placeholder="Title">
+    
+        <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
+    </div>
+    <div class="take-a-note" *ngIf="!showTitle  || showTitle" (click)="show()">
+        <div *ngIf="!showTitle  || showTitle">
+            <input matInput [(ngModel)]="description" class="takenote" type="text" 
+                placeholder="Take a note...">
+        </div>
+        <div *ngIf="!showTitle" class="icons">
+            <button mat-icon-button><img src="../../../assets/check_box_FILL0_wght400_GRAD0_opsz48.svg"></button>
+            <button mat-icon-button><img src="../../../assets/brush_FILL0_wght400_GRAD0_opsz48.svg"></button>
+            <button mat-icon-button><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+    </div>
+
+    <div *ngIf="showTitle" class="closeButton">
+        <div>
+            <app-icons></app-icons>
+        </div>
+        <button mat-button (click)="close()">Close</button>
+    </div>
+</div>

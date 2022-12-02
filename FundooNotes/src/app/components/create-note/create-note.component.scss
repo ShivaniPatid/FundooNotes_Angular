@@ -1,0 +1,70 @@
+.notes {
+    border: 1px;
+    border-color: #6d7075;
+    box-shadow: 2px 2px 2px 2px gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 40px;
+    margin-left: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    background-color: white;
+}
+.title {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 20px;
+}
+.pin{
+    padding-left: 450px;
+    opacity: 0.7;
+    margin-bottom: -30px;
+    width:20px;
+    height:20px;
+}
+.take-a-note {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.takenote{
+    padding-bottom: 0px;
+    padding-left: 15px;
+    height: 27px;
+    width: 420px;
+    border: none;
+    outline: none;
+}
+.icons {
+    padding-left: 350px;
+    opacity: 0.7;
+    margin-bottom: -30px;
+}
+
+.icons button {
+    border: none;
+    background-color: white;
+    width:45px;
+    height:25px;
+    padding-bottom: 30px;
+}
+.icons img{
+    width:20px;
+    height:20px;
+}
+.closeButton{
+    display: flex;
+    border: 0px;
+    font-size: large;
+    background-color: white;
+    margin-left: 5px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.closeButton button{
+    margin-right: 20px;
+    margin-top: 8px;
+}
