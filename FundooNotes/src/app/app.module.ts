@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -52,7 +54,9 @@ import { IconsComponent } from './components/icons/icons.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
