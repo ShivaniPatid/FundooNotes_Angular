@@ -12,10 +12,11 @@
     flex-direction: column;
     margin-top: 40px;
     margin-left: 20px;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: 15px;
     padding-right: 10px;
+    
     background-color: white;
 }
 .notes:hover {
@@ -26,4 +27,7 @@
 }
 .description {
     font-size: small;
+}
+.icon {
+    display: block;
 }
