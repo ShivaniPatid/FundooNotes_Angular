@@ -1,20 +1,29 @@
 <div class="container">
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Remind me"><img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Collaborator"><img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Background options"><img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Add image"><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Archive"><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button><img src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu"><img
+                src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <mat-menu #menu="matMenu" class="notifications-dropdown">
+            <button mat-menu-item>Delete Note</button>
+            <button mat-menu-item>Add label</button>
+            <button mat-menu-item>Add drawing </button>
+            <button mat-menu-item>Make a copy</button>
+            <button mat-menu-item>Show checkboxes</button>
+            <button mat-menu-item>Copy to Google Docs</button>
+        </mat-menu>
     </div>
 </div>
