@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="note">
+        <input class="title" [(ngModel)]="title">
+        <input class="description" [(ngModel)]="description">
+        <div class="icon">
+            <app-icons></app-icons>
+            <button mat-button (click)="closeDialog()" class="closeButton">Close</button>
+        </div>
+    </div>
+</div>
