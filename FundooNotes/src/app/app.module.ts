@@ -13,6 +13,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +26,7 @@ import { CreateNoteComponent } from './components/create-note/create-note.compon
 import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { IconsComponent } from './components/icons/icons.component';
     CreateNoteComponent,
     GetAllNotesComponent,
     DisplayNotesComponent,
-    IconsComponent
+    IconsComponent,
+    UpdateNoteComponent
     
   ],
   imports: [
@@ -56,7 +59,8 @@ import { IconsComponent } from './components/icons/icons.component';
     MatListModule,
     FormsModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
