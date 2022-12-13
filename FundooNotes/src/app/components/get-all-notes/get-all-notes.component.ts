@@ -20,6 +20,9 @@ export class GetAllNotesComponent implements OnInit{
       console.log(response);
       this.noteArray=response
       console.log(this.noteArray);
+      this.noteArray=this.noteArray.filter((result:any)=>{
+        return result.isArchive==false && result.isTrash==false;
+      })
     })
   }
 }
