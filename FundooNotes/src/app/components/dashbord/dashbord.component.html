@@ -57,9 +57,9 @@
                         src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg ">Reminders</a>
                 <a mat-list-item><img class="icon" src="../../../assets/edit_FILL0_wght400_GRAD0_opsz48.svg">Edit
                     labels</a>
-                <a mat-list-item><img class="icon"
+                <a mat-list-item (click)="archive()"><img class="icon"
                         src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg">Archive</a>
-                <a mat-list-item><img class="icon" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">Trash</a>
+                <a mat-list-item (click)="trash()"><img class="icon" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">Trash</a>
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content>
