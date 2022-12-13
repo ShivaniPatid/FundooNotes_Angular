@@ -41,4 +41,26 @@ export class NoteService {
     }
     return this.httpService.putService(`/Note/Update?noteId=${payload.noteId}`, payload, true, header)
   }
+
+  trashNoteService(payload:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`/Note/Trash?noteId=${payload.noteID}`, payload, true, header)
+
+  }
+
+  archiveNoteService(payload:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.putService(`/Note/Archive?noteId=${payload.noteID}`, payload, true, header)
+
+  }
 }
