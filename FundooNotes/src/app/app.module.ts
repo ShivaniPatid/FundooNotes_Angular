@@ -27,6 +27,8 @@ import { GetAllNotesComponent } from './components/get-all-notes/get-all-notes.c
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
     GetAllNotesComponent,
     DisplayNotesComponent,
     IconsComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    TrashNoteComponent,
+    ArchiveNoteComponent
     
   ],
   imports: [
