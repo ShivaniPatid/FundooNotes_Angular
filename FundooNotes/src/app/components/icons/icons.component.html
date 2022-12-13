@@ -12,13 +12,13 @@
         <button mat-icon-button matTooltip="Add image"><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="Archive"><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button (click)="archiveNote()" matTooltip="Archive"><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu"><img
                 src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
         <mat-menu #menu="matMenu" class="notifications-dropdown">
-            <button mat-menu-item>Delete Note</button>
+            <button mat-menu-item (click)="trashNote()">Delete Note</button>
             <button mat-menu-item>Add label</button>
             <button mat-menu-item>Add drawing </button>
             <button mat-menu-item>Make a copy</button>
