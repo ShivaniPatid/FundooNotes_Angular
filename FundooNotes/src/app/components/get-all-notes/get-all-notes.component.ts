@@ -9,6 +9,9 @@ import { NoteService } from 'src/app/services/noteServices/note.service';
 export class GetAllNotesComponent implements OnInit{
 
   noteArray=[]
+  isArchive=false
+  isTrash=false
+  
   constructor(private note : NoteService) { }
 
   ngOnInit(): void {
