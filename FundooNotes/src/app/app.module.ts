@@ -29,6 +29,8 @@ import { IconsComponent } from './components/icons/icons.component';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { AuthguardService } from './services/auth-guard/authguard.service';
+
 
 @NgModule({
   declarations: [
@@ -66,7 +68,7 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
     MatTooltipModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

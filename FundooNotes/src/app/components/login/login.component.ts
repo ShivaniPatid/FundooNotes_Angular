@@ -10,6 +10,8 @@ import { UserService } from 'src/app/services/userServices/user.service';
 export class LoginComponent {
   loginForm!: FormGroup;
   submitted = false;
+  users='1'
+
   constructor(private formBuilder: FormBuilder, private user : UserService) { }
 
   ngOnInit() {
@@ -17,6 +19,7 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
+    //localStorage.setItem('SeesionUser',this.users)
   }
 
   get f() { return this.loginForm.controls; }
@@ -32,6 +35,7 @@ export class LoginComponent {
       } 
       this.user.login(data).subscribe((response:any)=>{
         console.log(response);
+        localStorage.setItem("token",response.data);
       })
     }
 

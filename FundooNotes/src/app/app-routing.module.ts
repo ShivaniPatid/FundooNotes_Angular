@@ -8,19 +8,21 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
+import{AuthenticationGuard} from './Guard/authentication.guard';
 
 const routes: Routes = [
   { path:'register', component: RegistrationComponent},
   { path:'login', component: LoginComponent},
   { path:'forget', component: ForgetPasswordComponent},
   { path:'reset', component: ResetPasswordComponent},
-  { path:'dashbord', component: DashbordComponent,
+  { path:'' , redirectTo:"/login", pathMatch:'full'},
+  { path:'dashbord', component: DashbordComponent,canActivate:[AuthenticationGuard],
   children:[
     {path:'notes', component: GetAllNotesComponent},
     {path:'trash', component: TrashNoteComponent},
     {path:'archive', component: ArchiveNoteComponent}
   ]
-}
+},
 
 ];
 
