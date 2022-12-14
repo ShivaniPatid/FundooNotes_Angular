@@ -22,7 +22,7 @@ export class TrashNoteComponent implements OnInit{
       this.noteArray=response
       console.log(this.noteArray);
       this.noteArray=this.noteArray.filter((result:any)=>{
-        return result.isArchive==false;
+        return result.isTrash==true;
       })
     })
   }
