@@ -21,7 +21,7 @@ export class ArchiveNoteComponent implements OnInit{
       this.noteArray=response
       console.log(this.noteArray);
       this.noteArray=this.noteArray.filter((result:any)=>{
-        return result.isTrash==false;
+        return result.isArchive==true;
       })
     })
   }
