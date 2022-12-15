@@ -6,7 +6,15 @@
         <button mat-icon-button matTooltip="Collaborator"><img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
     <div class="icon">
-        <button mat-icon-button matTooltip="Background options"><img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button mat-icon-button matTooltip="Background options" [matMenuTriggerFor]="color"><img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <mat-menu #color="matMenu">
+            <div style="padding-left: 8px;" class="background">
+                <div class="bg-color" *ngFor="let color of colors">
+                    <button class="colorBoxSetting" mat-mini-fab [matTooltip]="color.name" [style.background]="color.name"
+                    (click)="setColor(color.name)"></button>
+                </div>
+            </div>
+        </mat-menu>
     </div>
     <div class="icon">
         <button mat-icon-button matTooltip="Add image"><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>

@@ -21,3 +21,25 @@
     margin-top: 24px;
     overflow: visible;
 }
+
+.background{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 220px;
+    padding: 10px 10px 5px 5px;
+}
+.colorBoxSetting {
+    background-color: transparent;
+    border-radius: 20px;
+    margin: 2px;
+    border: 0px solid;
+}
+.bg-color button {
+    height: 30px;
+    width: 30px;
+    display: block;
+    border-radius: 100px;
+}
+button:hover {
+    background-color: rgb(212, 128, 32);
+}
