@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NoteService } from 'src/app/services/noteServices/note.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/noteServices/note.service';
 export class IconsComponent {
 
   @Input() noteCard : any;
+  @Output() iconEvent = new EventEmitter<string>();
 
   constructor(private note : NoteService) { }
 
@@ -35,6 +36,7 @@ export class IconsComponent {
     console.log(payload);
     this.note.trashNoteService(payload).subscribe((response : any) => {
       console.log(response);
+      this.iconEvent.emit(response);
     })
   }
 
@@ -46,6 +48,7 @@ export class IconsComponent {
     console.log(payload);
     this.note.archiveNoteService(payload).subscribe((response : any) => {
       console.log(response);
+      this.iconEvent.emit(response);
     })
   }
 
@@ -58,6 +61,7 @@ export class IconsComponent {
     console.log(payload);
     this.note.colorService(payload).subscribe((response : any) => {
       console.log(response);
+      this.iconEvent.emit(response);
     })
   }
 }

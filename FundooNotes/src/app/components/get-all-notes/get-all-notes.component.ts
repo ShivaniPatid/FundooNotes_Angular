@@ -11,6 +11,7 @@ export class GetAllNotesComponent implements OnInit{
   noteArray=[]
   isArchive=false
   isTrash=false
+  message : any;
   
   constructor(private note : NoteService) { }
 
@@ -27,5 +28,11 @@ export class GetAllNotesComponent implements OnInit{
         return result.isArchive==false && result.isTrash==false;
       })
     })
+  }
+
+  receivedEventFromDisplayToGetAllNote($event : any){
+    //this.message = $event
+    //console.log(this.message);
+    this.getAllNote()
   }
 }
