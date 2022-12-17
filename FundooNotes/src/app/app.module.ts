@@ -30,7 +30,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import { TrashNoteComponent } from './components/trash-note/trash-note.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { AuthguardService } from './services/auth-guard/authguard.service';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,8 @@ import { AuthguardService } from './services/auth-guard/authguard.service';
     FormsModule,
     MatMenuModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule
   ],
   providers: [AuthguardService],
   bootstrap: [AppComponent]
