@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    height: auto;
 }
 .note {
     display: flex;
@@ -26,13 +27,18 @@
     outline: none;
 }
 .icon {
+    padding-top: 20px;
     display: flex;
     padding-left: 5px;
+    cursor: pointer;
+    padding-bottom: 10px;
 }
 .closeButton{
     border: none;
     background-color: white;
     cursor: pointer;
-    margin-left: 30px;
-    margin-top: 8px;
+    margin-left: 140px;
+    //margin-top: 1px;
+    margin-bottom: 10px;
+    //padding-bottom: 10px;
 }

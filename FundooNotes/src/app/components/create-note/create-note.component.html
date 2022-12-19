@@ -4,7 +4,7 @@
     
         <img class="pin" src="../../../assets/push_pin_FILL0_wght400_GRAD0_opsz48.svg">
     </div>
-    <div class="take-a-note" *ngIf="!showTitle  || showTitle" (click)="show()">
+    <div class="take-a-note"  *ngIf="!showTitle  || showTitle" (click)="show()">
         <div *ngIf="!showTitle  || showTitle">
             <input matInput [(ngModel)]="description" class="takenote" type="text" 
                 placeholder="Take a note...">

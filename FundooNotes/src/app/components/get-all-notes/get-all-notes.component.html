@@ -1,2 +1,2 @@
-<app-create-note (createEvent)="receivedEventFromCreate($event)"></app-create-note>
-<app-display-notes [NotesList]="noteArray" (displayToGetAllNoteEvent)="receivedEventFromDisplayToGetAllNote($event)"></app-display-notes>
+<app-create-note (createEvent)="receiveMessage($event)"></app-create-note>
+<app-display-notes [NotesList]="noteArray" (displayToGetAllNoteEvent)="receiveMessage($event)" ></app-display-notes>
