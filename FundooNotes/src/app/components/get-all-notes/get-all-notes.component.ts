@@ -30,13 +30,10 @@ export class GetAllNotesComponent implements OnInit{
     })
   }
 
-  receivedEventFromDisplayToGetAllNote($event : any){
-    //this.message = $event
-    //console.log(this.message);
-    this.getAllNote()
-  }
+  
+  
 
-  receivedEventFromCreate($event : any){
+  receiveMessage($event:any){
     this.getAllNote()
   }
 }

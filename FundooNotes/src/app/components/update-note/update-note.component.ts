@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject , Output, EventEmitter } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteServices/note.service';
 @Component({
@@ -10,7 +10,7 @@ export class UpdateNoteComponent {
   title : any;
   description : any;
   id : any;
-
+  @Output() updateEvent = new EventEmitter<string>();
   constructor( private note : NoteService,
     public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -34,10 +34,15 @@ export class UpdateNoteComponent {
     console.log(data);
       this.note.updateNoteService(data).subscribe((response : any) => {
         
-        console.log(response);
+        console.log("update response",response);
+        this.updateEvent.emit(response);
       })
       
       this.dialogRef.close();
+  }
+
+  receiveMessage($event:any){
+    this.closeDialog()
   }
   
 }

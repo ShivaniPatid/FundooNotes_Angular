@@ -31,10 +31,12 @@ export class DisplayNotesComponent {
     });
   }
 
-  receivedEventFromIcon($event : any){
+  receivedMessage($event : any){
     this.message = $event;
     console.log(this.message);
     this.displayToGetAllNoteEvent.emit(this.message);
   }
+
+  
 }
 
