@@ -26,4 +26,8 @@ export class TrashNoteComponent implements OnInit{
       })
     })
   }
+
+  receiveMessage($event : any){
+    this.getTrashNote();
+  }
 }

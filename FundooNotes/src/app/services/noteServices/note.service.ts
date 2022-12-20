@@ -74,4 +74,15 @@ export class NoteService {
     return this.httpService.putService(`/Note/Color?noteId=${payload.noteID}&color=${payload.color}`, payload, true, header)
 
   }
+
+  deleteForeverService(payload:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.deleteService(`/Note/Remove?noteId=${payload.noteID}`, true, header)
+
+  }
 }

@@ -1,17 +1,34 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoteService } from 'src/app/services/noteServices/note.service';
+import { ArchiveNoteComponent } from '../archive-note/archive-note.component';
+import { TrashNoteComponent } from '../trash-note/trash-note.component';
 
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.scss']
 })
-export class IconsComponent {
+export class IconsComponent implements OnInit {
 
   @Input() noteCard : any;
   @Output() iconEvent = new EventEmitter<string>();
+  
+  isDeleteCom: boolean = false;
+  isArchiveCom: boolean = false;
 
-  constructor(private note : NoteService) { }
+  constructor(private note : NoteService, private route:ActivatedRoute) { }
+
+  ngOnInit(): void {
+    let comp = this.route.snapshot.component;
+    if(comp == TrashNoteComponent){
+      this.isDeleteCom = true;
+    }  
+
+    if(comp == ArchiveNoteComponent){
+      this.isArchiveCom = true;
+    }
+  }
 
   colors: Array<any> = [
     { code: '#fff', name: 'white' },
@@ -40,10 +57,45 @@ export class IconsComponent {
     })
   }
 
+  restoreNote(){
+    let payload = {
+      noteID : [this.noteCard.noteID],
+      isTrash : false,
+    }
+    console.log(payload);
+    this.note.trashNoteService(payload).subscribe((response : any) => {
+      console.log(response);
+      this.iconEvent.emit(response);
+    })
+  }
+
+  deleteNote(){
+    let payload = {
+      noteID : [this.noteCard.noteID],
+    }
+    console.log(payload);
+    this.note.deleteForeverService(payload).subscribe((response : any) => {
+      console.log(response);
+      this.iconEvent.emit(response);
+    })
+  }
+
   archiveNote() {
     let payload = {
       noteID : [this.noteCard.noteID],
       isArchive : true,
+    }
+    console.log(payload);
+    this.note.archiveNoteService(payload).subscribe((response : any) => {
+      console.log(response);
+      this.iconEvent.emit(response);
+    })
+  }
+
+  unarchiveNote(){
+    let payload = {
+      noteID : [this.noteCard.noteID],
+      isArchive : false,
     }
     console.log(payload);
     this.note.archiveNoteService(payload).subscribe((response : any) => {
@@ -64,4 +116,6 @@ export class IconsComponent {
       this.iconEvent.emit(response);
     })
   }
+
+  
 }

@@ -18,8 +18,8 @@ export class HttpService {
     return this.httpClient.put(this.baseUrl+url,reqdata,token && httpOptions)
 
   }
-  deleteService(){
-
+  deleteService(url:string, token: boolean = false, httpOptions: any = {}){
+    return this.httpClient.delete(this.baseUrl+url, token && httpOptions)
   }
   patchService(){
 

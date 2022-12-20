@@ -25,4 +25,8 @@ export class ArchiveNoteComponent implements OnInit{
       })
     })
   }
+
+  receiveMessage($event : any){
+    this.getArchiveNote();
+  }
 }

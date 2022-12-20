@@ -1,37 +1,55 @@
 <div class="container">
-    <div class="icon">
-        <button  matTooltip="Remind me"><img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    </div>
-    <div class="icon">
-        <button matTooltip="Collaborator"><img src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    </div>
-    <div class="icon">
-        <button  matTooltip="Background options" [matMenuTriggerFor]="color"><img src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
-        <mat-menu #color="matMenu">
-            <div fxLayout="row wrap" style="padding-left: 8px;" fxLayout="row" fxLayoutAlign="none" class="background">
-                <div class="bg-color" *ngFor="let color of colors">
-                    <button class="colorBoxSetting" mat-mini-fab [matTooltip]="color.name" [style.background]="color.name"
-                    (click)="setColor(color.name)"></button>
+
+    <div class="container" *ngIf="!isDeleteCom">
+        <div class="icon">
+            <button matTooltip="Remind me"><img src="../../../assets/add_alert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+        <div class="icon">
+            <button matTooltip="Collaborator"><img
+                    src="../../../assets/person_add_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+        <div class="icon">
+            <button matTooltip="Background options" [matMenuTriggerFor]="color"><img
+                    src="../../../assets/palette_FILL0_wght400_GRAD0_opsz48.svg"></button>
+            <mat-menu #color="matMenu">
+                <div fxLayout="row wrap" style="padding-left: 8px;" fxLayout="row" fxLayoutAlign="none"
+                    class="background">
+                    <div class="bg-color" *ngFor="let color of colors">
+                        <button class="colorBoxSetting" mat-mini-fab [matTooltip]="color.name"
+                            [style.background]="color.name" (click)="setColor(color.name)"></button>
+                    </div>
                 </div>
-            </div>
-        </mat-menu>
+            </mat-menu>
+        </div>
+        <div class="icon">
+            <button matTooltip="Add image"><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+        <div class="icon" *ngIf="!isArchiveCom">
+            <button (click)="archiveNote()" matTooltip="Archive"><img
+                    src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+        <div class="icon" *ngIf="isArchiveCom">
+            <button (click)="unarchiveNote()" matTooltip="Unarchive"><img
+                    src="../../../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        </div>
+        <div class="icon">
+            <button matTooltip="More" [matMenuTriggerFor]="menu"><img
+                    src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
+            <mat-menu #menu="matMenu" class="notifications-dropdown">
+                <button mat-menu-item (click)="trashNote()">Delete Note</button>
+                <button mat-menu-item>Add label</button>
+                <button mat-menu-item>Add drawing </button>
+                <button mat-menu-item>Make a copy</button>
+                <button mat-menu-item>Show checkboxes</button>
+                <button mat-menu-item>Copy to Google Docs</button>
+            </mat-menu>
+        </div>
     </div>
-    <div class="icon">
-        <button matTooltip="Add image"><img src="../../../assets/image_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    </div>
-    <div class="icon">
-        <button (click)="archiveNote()" matTooltip="Archive"><img src="../../../assets/archive_FILL0_wght400_GRAD0_opsz48.svg"></button>
-    </div>
-    <div class="icon">
-        <button  matTooltip="More" [matMenuTriggerFor]="menu"><img
-                src="../../../assets/more_vert_FILL0_wght400_GRAD0_opsz48.svg"></button>
-        <mat-menu #menu="matMenu" class="notifications-dropdown">
-            <button mat-menu-item (click)="trashNote()">Delete Note</button>
-            <button mat-menu-item>Add label</button>
-            <button mat-menu-item>Add drawing </button>
-            <button mat-menu-item>Make a copy</button>
-            <button mat-menu-item>Show checkboxes</button>
-            <button mat-menu-item>Copy to Google Docs</button>
-        </mat-menu>
+
+    <div class="restore" *ngIf="isDeleteCom">
+        <button matTooltip="Delete forever" (click)="deleteNote()"><img
+                src="../../../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg"></button>
+        <button matTooltip="Restore" (click)="restoreNote()"><img
+                src="../../../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg"></button>
     </div>
 </div>
