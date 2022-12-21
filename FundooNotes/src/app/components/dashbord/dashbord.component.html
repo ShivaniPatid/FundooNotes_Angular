@@ -1,7 +1,7 @@
 <div class="container headerSetting" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="toolbar ">
         <div id="mySidenav">
-            <button style="border: 0px; "  mat-icon-button onmouseover="snav.toggle()" (click)="snav.toggle()" >
+            <button style="border: 0px; " mat-icon-button onmouseover="snav.toggle()" (click)="snav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
         </div>
@@ -16,7 +16,7 @@
 
         <div class="wholesearchbox">
             <img style="margin-left: 10px; height: 30px;" src="../../../assets/search_FILL0_wght400_GRAD0_opsz48.svg">
-            <input class="inputSearchbox" (keyup)="searchTitle($event)"  type="search" placeholder="Search" >
+            <input class="inputSearchbox" (keyup)="searchTitle($event)" type="search" placeholder="Search">
         </div>
 
         <div>
@@ -42,16 +42,16 @@
         </div>
 
         <div>
-            <button class="button toolButtonSetting" [matMenuTriggerFor]="menu"><img src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg"
-                    width="30" height="30"></button>
-                    <mat-menu #menu >
-                        <button mat-menu-item width="300" height="300" (click)="logout()">Logout</button>
-                    </mat-menu>
+            <button class="button toolButtonSetting" [matMenuTriggerFor]="menu"><img
+                    src="../../../assets/account_circle_FILL0_wght400_GRAD0_opsz48.svg" width="30" height="30"></button>
+            <mat-menu #menu>
+                <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
         </div>
     </mat-toolbar>
 
     <div class="menu" fxLayout="row">
-        <div class="note1" fxLayout="column" fxLayoutGap="23px" >
+        <div class="note1" fxLayout="column" fxLayoutGap="23px">
             <img class="icon" src="../../../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg">
 
             <img class="icon" src="../../../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg">
@@ -63,20 +63,20 @@
             <img class="icon" src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48.svg">
         </div>
 
-    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56">
-            <mat-nav-list >
-                <a mat-list-item  (click)="notes()">Notes</a>
-                <a mat-list-item>Reminders</a>
-                <a mat-list-item>Edit labels</a>
-                <a mat-list-item (click)="archive()">Archive</a>
-                <a mat-list-item (click)="trash()">Trash</a>
-            </mat-nav-list>
-        </mat-sidenav>
-        <mat-sidenav-content>
-            <router-outlet></router-outlet> 
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
+        <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+            <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+                fixedTopGap="56">
+                <mat-nav-list>
+                    <a mat-list-item (click)="notes()">Notes</a>
+                    <a mat-list-item>Reminders</a>
+                    <a mat-list-item>Edit labels</a>
+                    <a mat-list-item (click)="archive()">Archive</a>
+                    <a mat-list-item (click)="trash()">Trash</a>
+                </mat-nav-list>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
 </div>
