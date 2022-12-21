@@ -1,5 +1,5 @@
 <div class="container" fxLayout="row wrap">
-    <div class="notes" *ngFor="let notes of NotesList" [style.background]="notes.color" (updateEvent)="receivedMessage($event)" >
+    <div class="notes" *ngFor="let notes of NotesList | search : searchWord" [style.background]="notes.color" (updateEvent)="receivedMessage($event)" >
         <div class="title">
             <p (click)="openDialog(notes)">{{notes.title}}</p>
         </div>

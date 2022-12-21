@@ -31,6 +31,7 @@ import { TrashNoteComponent } from './components/trash-note/trash-note.component
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { AuthguardService } from './services/auth-guard/authguard.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchPipe } from './Pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     IconsComponent,
     UpdateNoteComponent,
     TrashNoteComponent,
-    ArchiveNoteComponent
+    ArchiveNoteComponent,
+    SearchPipe
     
   ],
   imports: [

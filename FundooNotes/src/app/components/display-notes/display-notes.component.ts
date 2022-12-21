@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { DataService } from 'src/app/services/DataServices/data.service';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 
 @Component({
@@ -7,16 +8,28 @@ import { UpdateNoteComponent } from '../update-note/update-note.component';
   templateUrl: './display-notes.component.html',
   styleUrls: ['./display-notes.component.scss']
 })
-export class DisplayNotesComponent {
+export class DisplayNotesComponent implements OnInit {
 
   @Input() NotesList: any;
   @Output() displayToGetAllNoteEvent = new EventEmitter<string>();
   title : any;
   description : any;
+  search = '';
   message : any;
+  subscription : any;
+  searchWord : any;
 
+  constructor(public dialog: MatDialog, private dataService : DataService) {}
 
-  constructor(public dialog: MatDialog) {}
+  ngOnInit(): void {
+    
+    this.subscription = this.dataService.searchNote.subscribe(messages => {
+      this.message = messages;
+      console.log("display card search data======", messages.data[0]);
+      this.searchWord=messages.data[0]
+      
+    })
+  }
 
   openDialog(note : any): void {
     const dialogRef = this.dialog.open(UpdateNoteComponent, {

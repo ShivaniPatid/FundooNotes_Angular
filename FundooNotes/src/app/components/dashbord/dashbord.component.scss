@@ -8,6 +8,7 @@
     right: 0;
 }
 
+  
 .example-is-mobile .toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
@@ -37,6 +38,7 @@ h1.app-name {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
+    
 }
 
 .example-is-mobile .example-sidenav-container {
@@ -45,11 +47,6 @@ h1.app-name {
     flex: 1 0 auto;
 }
 
-.icon {
-    padding-left: 12px;
-    padding-right: 20px;
-    height: 25px;
-}
 
 
 .keepImage {
@@ -72,6 +69,22 @@ h1.app-name {
     color: #5f6368;
     margin-left: 80px;
     outline: none;
+}
+
+.menu{
+    height: 100%;
+}
+.icon {
+    padding-left: 12px;
+    padding-right: 15px;
+    height: 25px;
+}
+
+.note1 {
+    
+    margin-top: 1.5%;
+    margin-left: 12px;
+    
 }
 
 .inputSearchbox {
