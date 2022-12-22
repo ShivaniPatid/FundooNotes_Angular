@@ -11,7 +11,7 @@ export class SearchPipe implements PipeTransform {
       args=args.toLocaleLowerCase();
     }
     return value.filter((note: any)=>{
-      return note.title.toLocaleLowerCase().includes(args) |  note.title.toLocaleLowerCase().includes(args);
+      return note.title.toLocaleLowerCase().includes(args) |  note.note.toLocaleLowerCase().includes(args);
     })
   }
 }

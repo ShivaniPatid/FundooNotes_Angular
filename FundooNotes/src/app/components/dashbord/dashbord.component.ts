@@ -53,4 +53,5 @@ export class DashbordComponent implements OnDestroy {
     }
     this.dataervice.changeData(Ddata)
   }
+
 }
