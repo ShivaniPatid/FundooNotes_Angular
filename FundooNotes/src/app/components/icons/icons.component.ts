@@ -2,7 +2,9 @@ import { Component, Input, Output, EventEmitter,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NoteService } from 'src/app/services/noteServices/note.service';
 import { ArchiveNoteComponent } from '../archive-note/archive-note.component';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { TrashNoteComponent } from '../trash-note/trash-note.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-icons',
@@ -17,7 +19,7 @@ export class IconsComponent implements OnInit {
   isDeleteCom: boolean = false;
   isArchiveCom: boolean = false;
 
-  constructor(private note : NoteService, private route:ActivatedRoute) { }
+  constructor(private note : NoteService, private route:ActivatedRoute, public dialog:MatDialog) { }
 
   ngOnInit(): void {
     let comp = this.route.snapshot.component;
@@ -117,5 +119,19 @@ export class IconsComponent implements OnInit {
     })
   }
 
+
+  openDialog(data : any): void {
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width: '500px',
+      height: 'auto',
+      data: this.noteCard,
+    });
+
+    dialogRef.afterClosed().subscribe(response => {
+      console.log('The dialog was closed',response);
+      
+    });
+  }
+  
   
 }

@@ -32,6 +32,7 @@ import { ArchiveNoteComponent } from './components/archive-note/archive-note.com
 import { AuthguardService } from './services/auth-guard/authguard.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchPipe } from './Pipe/search.pipe';
+import { CollaboratorComponent } from './components/collaborator/collaborator.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SearchPipe } from './Pipe/search.pipe';
     UpdateNoteComponent,
     TrashNoteComponent,
     ArchiveNoteComponent,
-    SearchPipe
+    SearchPipe,
+    CollaboratorComponent
     
   ],
   imports: [
